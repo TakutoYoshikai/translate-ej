@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import sys
+import os
 from googletrans import Translator
 
 def translate(text=None):
@@ -15,7 +16,7 @@ if len(sys.argv) < 2:
   sys.exit() 
 
 if sys.argv[1] == "-l":
-    with open("/home/lucky/workspace/translate/log.txt", "a") as f:
+    with open(os.path.dirname(__file__) + "/../log.txt", "a") as f:
         while True:
             text = input()
             result = translate(text)
